@@ -1,24 +1,26 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
+// import reducer from "../reducer/cartReducer";
 import reducer from "../reducer/cartReducer";
 
 const CartContext = createContext();
 
-const getLocalCartData = () => {
-  let localCartData = localStorage.getItem("thapaCart");
-  if (localCartData === []) {
-    return [];
-  } else {
-    return JSON.parse(localCartData);
-  }
-};
 // const getLocalCartData = () => {
 //   let localCartData = localStorage.getItem("thapaCart");
-//   if (!localCartData || localCartData === "null") {
+//   if (localCartData === []) {
 //     return [];
 //   } else {
 //     return JSON.parse(localCartData);
 //   }
 // };
+const getLocalCartData = () => {
+  let localCartData = localStorage.getItem("thapaCart");
+  if (!localCartData || localCartData === "null") {
+    return [];
+  } else {
+    return JSON.parse(localCartData);
+  }
+};
+
 
 
 const initialState = {
